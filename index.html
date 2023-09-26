@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="png" href="num.png">
+
+    <style>
+        span{
+            color: red;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body align = "center">
+    <p><span>Guess</span> the number 1 to 10!!!!</p>
+    <input type="number" id="fieldguess" placeholder="Enter number" required>
+    <p id="count">0</p><br>
+    <input type="submit" id="submitguess" value="Guess">
+
+    <p id="info">Guess it</p>
+
+
+
+
+
+    <script>
+           // let x = document.getElementById(fieldguess).value;
+           // console.log(x)
+        let y = Math.floor(Math.random()*10+1);
+        var count1 = 0
+        let limit = 3
+        var fun =  document.getElementById("submitguess")
+       
+
+       fun.onclick = function(){
+        
+        var count = document.getElementById("count")
+
+        count1++
+
+        count.innerHTML = count1;
+
+        let x = document.getElementById("fieldguess").value;
+        var info = document.getElementById("info")
+
+        if(count1 == limit){
+            alert("time out!!!!!!!!!!!!, Game will restart")
+            count = 0
+            location.reload()
+        }
+        
+        else if (x == y) {
+
+            alert("Winnnning !!!!!!!!!!!")
+            location.reload()
+        }
+        else if(x<y){
+            info.innerHTML="Thinking big"
+
+        }
+        else if(x>y){
+            info.innerHTML="Thinking small"
+        }
+        
+        }
+
+
+    </script>
+    
+</body>
+</html>
